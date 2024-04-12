@@ -13,6 +13,10 @@ export default {
       colors: {
         primary: "#181818",
         secondary: "#222222",
+        orangeColor: "rgba(247, 159, 35, 0.7)",
+        yellowColor: "rgba(254, 237, 0, 0.8)",
+        btnBg: "#F79F23",
+        textColor: "rgba(24, 24, 24, 0.7)",
       },
     },
   },
