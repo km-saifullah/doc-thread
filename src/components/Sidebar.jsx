@@ -4,7 +4,7 @@ import Button from "../utils/Button";
 
 const Sidebar = () => {
   return (
-    <section className="p-8 h-[65%] w-[250px] bg-secondary absolute top-0 left-0 z-10">
+    <section className="p-8 h-[65%] w-[250px] bg-secondary absolute top-0 left-0">
       <div className="py-8 text-center space-y-2">
         <Link className="text-white text-2xl font-roboto font-normal text-center">
           DocThread

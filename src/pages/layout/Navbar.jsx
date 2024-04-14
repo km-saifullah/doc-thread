@@ -9,7 +9,7 @@ const Navbar = () => {
     !sidebarOpen ? setSidebarOpen(true) : setSidebarOpen(false);
   };
   return (
-    <nav className="p-4 lg:p-8">
+    <nav className="p-4 lg:p-8 relative z-50">
       <div className="max-w-container mx-auto">
         {sidebarOpen && <Sidebar />}
         <div className="flex items-center justify-between relative">

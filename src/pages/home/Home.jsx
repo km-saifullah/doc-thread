@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "../../utils/Button";
+import Banner from "./Banner";
 
 const Home = () => {
   return (
-    <div>
-      <Button text="Register" />
-    </div>
+    <main>
+      <Banner />
+    </main>
   );
 };
 
