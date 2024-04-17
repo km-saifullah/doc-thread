@@ -17,6 +17,7 @@ export default {
         yellowColor: "rgba(254, 237, 0, 0.8)",
         btnBg: "#F79F23",
         textColor: "rgba(24, 24, 24, 0.7)",
+        navLink: "rgba(24, 24, 24, 0.8)",
       },
     },
   },

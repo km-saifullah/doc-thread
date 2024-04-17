@@ -4,7 +4,7 @@ import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 
 const Navbar = () => {
   return (
-    <nav className="p-4">
+    <nav className="w-full p-4 absolute left-0 top-0 z-10">
       <div className="max-w-container mx-auto">
         <div className="flex items-center justify-between">
           <div className="">
@@ -22,7 +22,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `${
                       isActive
-                        ? "text-btnBg"
+                        ? "text-navLink"
                         : "text-primary text-base font-medium font-roboto leading-[140%]"
                     }  `
                   }
@@ -35,7 +35,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `${
                       isActive
-                        ? "text-btnBg"
+                        ? "text-navLink"
                         : "text-primary text-base font-medium font-roboto leading-[140%]"
                     }  `
                   }
@@ -49,7 +49,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `${
                       isActive
-                        ? "text-btnBg"
+                        ? "text-navLink"
                         : "text-primary text-base font-medium font-roboto leading-[140%]"
                     }  `
                   }
@@ -63,7 +63,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `${
                       isActive
-                        ? "text-btnBg"
+                        ? "text-navLink"
                         : "text-primary text-base font-medium font-roboto leading-[140%]"
                     }  `
                   }
