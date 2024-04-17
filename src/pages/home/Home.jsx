@@ -1,10 +1,12 @@
 import React from "react";
 import Banner from "./Banner";
+import Speciality from "./Speciality";
 
 const Home = () => {
   return (
-    <main>
+    <main className="">
       <Banner />
+      <Speciality />
     </main>
   );
 };
