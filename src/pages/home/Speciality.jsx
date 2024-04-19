@@ -5,10 +5,11 @@ import Image from "../../utils/Image";
 import { Card } from "../../components";
 import docReport from "../../assets/images/doc_withReport.png";
 import Button from "../../utils/Button";
+import { Link } from "react-router-dom";
 
 const Speciality = () => {
   return (
-    <section className="py-4 lg:py-[77px]">
+    <section className="py-4 lg:py-[77px] px-2">
       <div className="max-w-container mx-auto">
         <div className="text-center w-full lg:w-[863px] mx-auto">
           <Heading
@@ -17,8 +18,8 @@ const Speciality = () => {
           />
         </div>
         <div className="flex items-center justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-2 pt-5 lg:pt-[54px]">
-          {[0, 1, 2, 3].map((item) => (
-            <Card imgSrc={docImg} title="Specialist Doctor" />
+          {[0, 1, 2, 3].map((item, index) => (
+            <Card key={index} imgSrc={docImg} title="Specialist Doctor" />
           ))}
         </div>
         <div className="flex items-start flex-wrap lg:flex-nowrap gap-x-[80px] pt-6 lg:pt-[77px]">
@@ -41,7 +42,9 @@ const Speciality = () => {
                 Caring and Loveable ambience
               </li>
             </ul>
-            <Button text="Register" />
+            <Link to="/signup">
+              <Button text="Register" />
+            </Link>
           </div>
         </div>
       </div>
