@@ -42,7 +42,7 @@ const Footer = () => {
                   <FaPhoneAlt className="text-2xl" />
                 </div>
                 <div>
-                  <p className="text-xl text-primary font-normal font-poppins leading-[135%]">
+                  <p className="text-base text-primary font-normal font-poppins leading-[135%]">
                     <a href="tel:(+880) 123456789">(+880) 123456789</a>
                   </p>
                 </div>

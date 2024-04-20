@@ -1,6 +1,6 @@
 # DocThread - Doctor Portal Application
 
-DocThread is a web application built using ReactJS and Firebase, aimed at facilitating doctor-patient interactions and appointments scheduling online. It provides a user-friendly interface for users to make appointments, manage their medical records, and access healthcare services remotely.
+DocThread is a web application built using ReactJS and Firebase, aimed at facilitating doctor-patient interactions and appointments scheduling online. It provides a user-friendly interface for users to make appointments and access healthcare services remotely.
 
 [![ReactJS](https://img.shields.io/badge/ReactJS-blue?style=flat-square&logo=react)](https://reactjs.org/)
 [![Firebase](https://img.shields.io/badge/Firebase-orange?style=flat-square&logo=firebase)](https://firebase.google.com/)
@@ -52,3 +52,5 @@ npm run dev
 ## Live Demo
 
 ## Figma Link
+
+[UI Design](https://www.figma.com/file/YwNIiir4NZxddMN5akzgpp/DocThread?type=design&node-id=0%3A1&mode=design&t=2DoFIQ9qxjzWmPa4-1)
