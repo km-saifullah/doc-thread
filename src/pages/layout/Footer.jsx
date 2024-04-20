@@ -1,7 +1,6 @@
 import React from "react";
 import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import Item from "../../utils/Item";
 
 const Footer = () => {

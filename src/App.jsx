@@ -4,7 +4,14 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { About, Contact, Home, MainLayout } from "./pages";
+import {
+  About,
+  Appointment,
+  Contact,
+  Home,
+  MainLayout,
+  NotFound,
+} from "./pages";
 
 // All Routes
 const router = createBrowserRouter(
@@ -13,6 +20,8 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/appointment" element={<Appointment />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
