@@ -11,6 +11,7 @@ import {
   Home,
   MainLayout,
   NotFound,
+  Registration,
 } from "./pages";
 
 // All Routes
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/appointment" element={<Appointment />} />
+      <Route path="/register" element={<Registration />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

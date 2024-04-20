@@ -19,6 +19,9 @@ export default {
         textColor: "rgba(24, 24, 24, 0.7)",
         navLink: "rgba(24, 24, 24, 0.8)",
       },
+      dropShadow: {
+        inputShadow: "0px 2px 4px rgba(0,0,0,0.25)",
+      },
     },
   },
   plugins: [],
