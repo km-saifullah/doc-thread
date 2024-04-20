@@ -83,6 +83,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className="pt-10">
+          <p className="text-base text-primary font-normal font-poppins leading-[135%] text-center capitalize">
+            © All Rights Reserved by Khaled Md Saifullah
+          </p>
+        </div>
       </div>
     </footer>
   );
