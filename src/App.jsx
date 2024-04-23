@@ -9,6 +9,7 @@ import {
   Appointment,
   Contact,
   Home,
+  Login,
   MainLayout,
   NotFound,
   Registration,
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/appointment" element={<Appointment />} />
       <Route path="/register" element={<Registration />} />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
