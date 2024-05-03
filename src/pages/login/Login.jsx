@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../utils/Input";
 import { useFirebase } from "../../context/Firebase";
 import {
   emailValidation,
   passwordValidation,
 } from "../../validation/validation";
+import { useDispatch } from "react-redux";
+import { user } from "../../features/users/userSlice";
 
 const Login = () => {
   const firebase = useFirebase();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -36,8 +40,10 @@ const Login = () => {
     if (!error.emailError) {
       firebase
         .signInUserWithEmailAndPassword(loginData.email, loginData.password)
-        .then((userCredential) => {
-          console.log(userCredential.user);
+        .then((userData) => {
+          localStorage.setItem("user", JSON.stringify(userData.user));
+          let data = dispatch(user(userData.user));
+          navigate("/");
         })
         .catch(() => {});
     }

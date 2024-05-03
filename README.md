@@ -8,6 +8,10 @@ DocThread is a web application built using ReactJS and Firebase, aimed at facili
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-green?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![React Router DOM](https://img.shields.io/badge/React_Router_DOM-purple?style=flat-square&logo=react-router)](https://reactrouter.com/)
 
+<div align="center">
+<img width="400" src="./src/assets/images/home.png" />
+</div>
+
 ## Key Features
 
 - Online Appointment: Schedule appointments with doctors conveniently.
