@@ -12,9 +12,6 @@ export const FirebaseProvider = (props) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  //   put data in the database
-  //   const putData = ()
-
   return (
     <FirebaseContext.Provider value={{ signUpUserWithEmailAndPassword }}>
       {props.children}

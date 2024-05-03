@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../../utils/Input";
 import { useFirebase } from "../../context/Firebase";
+import {
+  emailValidation,
+  nameValidation,
+  passwordValidation,
+} from "../../validation/validation";
 
 const Registration = () => {
   let firebase = useFirebase();
@@ -11,6 +16,11 @@ const Registration = () => {
     email: "",
     phone: "",
     password: "",
+  });
+  const [error, setError] = useState({
+    fullnameError: "",
+    emailError: "",
+    passwordError: "",
   });
 
   // handle input data
@@ -22,11 +32,30 @@ const Registration = () => {
 
   // handle registration
   const handleRegistration = (e) => {
-    console.log(registerData);
-    firebase.signUpUserWithEmailAndPassword(
-      registerData.email,
-      registerData.password
-    );
+    setError({
+      ...error,
+      fullnameError: nameValidation(registerData.fullname),
+      emailError: emailValidation(registerData.email),
+      // passwordError: passwordValidation(registerData.password),
+    });
+
+    // register user
+    if (!error.emailError) {
+      firebase
+        .signUpUserWithEmailAndPassword(
+          registerData.email,
+          registerData.password
+        )
+        .then((userData) => {
+          console.log(userData);
+        })
+        .catch((error) => {
+          let status = error.code;
+          if (status == "auth/email-already-in-use") {
+            setError({ emailError: "This email has already exist" });
+          }
+        });
+    }
     setRegisterData({
       fullname: "",
       email: "",
@@ -51,6 +80,9 @@ const Registration = () => {
               placeholder="Full Name"
               onChange={handleInput}
             />
+            <div className={`${!error.fullnameError ? "hidden" : "block"} `}>
+              {error.fullnameError}
+            </div>
             <Input
               type="email"
               name="email"
@@ -58,6 +90,9 @@ const Registration = () => {
               placeholder="Email"
               onChange={handleInput}
             />
+            <div className={`${!error.emailError ? "hidden" : "block"} `}>
+              {error.emailError}
+            </div>
             <Input
               type="tel"
               name="phone"
@@ -71,7 +106,11 @@ const Registration = () => {
               value={registerData.password}
               placeholder="Password"
               onChange={handleInput}
+              autocomplete
             />
+            <div className={`${!error.passwordError ? "hidden" : "block"} `}>
+              {error.passwordError}
+            </div>
             <button
               className="w-full lg:w-[1000px] inline-block bg-btnBg py-[20px] px-[25px] border-none outline-none text-xl text-white font-medium font-roboto leading-[140%] rounded-[5px]"
               onClick={handleRegistration}
