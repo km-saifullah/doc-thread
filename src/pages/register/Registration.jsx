@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../utils/Input";
 import { useFirebase } from "../../context/Firebase";
 import {
@@ -10,6 +10,7 @@ import {
 
 const Registration = () => {
   let firebase = useFirebase();
+  const navigate = useNavigate();
 
   const [registerData, setRegisterData] = useState({
     fullname: "",
@@ -48,6 +49,7 @@ const Registration = () => {
         )
         .then((userData) => {
           console.log(userData);
+          navigate("/login");
         })
         .catch((error) => {
           let status = error.code;
@@ -106,7 +108,7 @@ const Registration = () => {
               value={registerData.password}
               placeholder="Password"
               onChange={handleInput}
-              autocomplete
+              autoComplete
             />
             <div className={`${!error.passwordError ? "hidden" : "block"} `}>
               {error.passwordError}
