@@ -42,9 +42,11 @@ const Speciality = () => {
                 Caring and Loveable ambience
               </li>
             </ul>
-            <Link to="/signup">
-              <Button text="Register" />
-            </Link>
+            <div>
+              <Link to="/signup">
+                <Button text="Register" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

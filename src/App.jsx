@@ -18,15 +18,19 @@ import {
 // All Routes
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<MainLayout />}>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/appointment" element={<Appointment />} />
-      <Route path="/register" element={<Registration />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="*" element={<NotFound />} />
-    </Route>
+    <>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/appointment" element={<Appointment />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+      </Route>
+      <Route element={<MainLayout />}>
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </>
   )
 );
 

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../../utils/Input";
+import { useFirebase } from "../../context/Firebase";
 
 const Registration = () => {
+  let firebase = useFirebase();
+
   const [registerData, setRegisterData] = useState({
     fullname: "",
     email: "",
@@ -19,6 +22,11 @@ const Registration = () => {
 
   // handle registration
   const handleRegistration = (e) => {
+    console.log(registerData);
+    firebase.signUpUserWithEmailAndPassword(
+      registerData.email,
+      registerData.password
+    );
     setRegisterData({
       fullname: "",
       email: "",

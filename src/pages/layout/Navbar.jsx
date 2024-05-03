@@ -72,6 +72,20 @@ const Navbar = () => {
                   Appointment
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "text-navLink"
+                        : "text-primary text-base font-medium font-roboto leading-[140%]"
+                    }  `
+                  }
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              </li>
             </ul>
           </div>
           <div className="block lg:hidden">
