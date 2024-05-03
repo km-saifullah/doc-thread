@@ -26,6 +26,7 @@ const router = createBrowserRouter(
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
+        {/* {notSignedIn ? <Route path="/login" element={<Login />} /> : null} */}
       </Route>
       <Route element={<MainLayout />}>
         <Route path="*" element={<NotFound />} />

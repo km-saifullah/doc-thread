@@ -4,6 +4,7 @@ DocThread is a web application built using ReactJS and Firebase, aimed at facili
 
 [![ReactJS](https://img.shields.io/badge/ReactJS-blue?style=flat-square&logo=react)](https://reactjs.org/)
 [![Firebase](https://img.shields.io/badge/Firebase-orange?style=flat-square&logo=firebase)](https://firebase.google.com/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-4B32C3.svg?style=flat&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-green?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![React Router DOM](https://img.shields.io/badge/React_Router_DOM-purple?style=flat-square&logo=react-router)](https://reactrouter.com/)
 

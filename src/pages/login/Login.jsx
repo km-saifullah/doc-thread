@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../../utils/Input";
+import { useFirebase } from "../../context/Firebase";
+import {
+  emailValidation,
+  passwordValidation,
+} from "../../validation/validation";
 
 const Login = () => {
+  const firebase = useFirebase();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
+  });
+  const [error, setError] = useState({
+    emailError: "",
+    passwordError: "",
   });
 
   // handle input for login
@@ -17,7 +27,21 @@ const Login = () => {
 
   // handle login form
   const handleLogin = (e) => {
-    console.log(loginData);
+    setError({
+      ...error,
+      emailError: emailValidation(loginData.email),
+      // passwordError: passwordValidation(loginData.password),
+    });
+
+    if (!error.emailError) {
+      firebase
+        .signInUserWithEmailAndPassword(loginData.email, loginData.password)
+        .then((userCredential) => {
+          console.log(userCredential.user);
+        })
+        .catch(() => {});
+    }
+
     setLoginData({
       email: "",
       password: "",
@@ -50,7 +74,7 @@ const Login = () => {
               className="w-full lg:w-[1000px] inline-block bg-btnBg py-[20px] px-[25px] border-none outline-none text-xl text-white font-medium font-roboto leading-[140%] rounded-[5px]"
               onClick={handleLogin}
             >
-              Registration
+              Login
             </button>
             <h5 className="text-xl text-primary font-normal font-poppins leading-[135%] capitalize">
               Don't have an account?{" "}
