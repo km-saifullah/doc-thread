@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiMiniBars3BottomLeft } from "react-icons/hi2";
+import { useSelector } from "react-redux";
+import { useFirebase } from "../../context/Firebase";
 
 const Navbar = () => {
+  const firebase = useFirebase();
+  let data = useSelector((state) => state.user.value);
+  let [isSignedIn, setIsSignedIn] = useState(false);
+
+  // handle logout
+  const handleLogout = () => {
+    firebase.userSignOut().then(() => {
+      localStorage.removeItem("user");
+      setIsSignedIn(false);
+    });
+  };
+
+  firebase.getSignedInUser((data) => {
+    if (data) {
+      setIsSignedIn(true);
+    } else {
+    }
+  });
   return (
     <nav className="w-full p-4 absolute left-0 top-0 z-10">
       <div className="max-w-container mx-auto">
@@ -73,18 +93,27 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className={({ isActive }) =>
-                    `${
-                      isActive
-                        ? "text-navLink"
-                        : "text-primary text-base font-medium font-roboto leading-[140%]"
-                    }  `
-                  }
-                  to="/login"
-                >
-                  Login
-                </NavLink>
+                {!isSignedIn ? (
+                  <NavLink
+                    className={({ isActive }) =>
+                      `${
+                        isActive
+                          ? "text-navLink"
+                          : "text-primary text-base font-medium font-roboto leading-[140%]"
+                      }  `
+                    }
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+                ) : (
+                  <ul className="flex items-center justify-center gap-x-3">
+                    <li>{data.email}</li>
+                    <li className="bg-btnBg px-3 py-2 rounded">
+                      <Link onClick={handleLogout}>Logout</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
             </ul>
           </div>

@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { auth, db } from "../config/firebase.config";
 
@@ -26,12 +27,18 @@ export const FirebaseProvider = (props) => {
     return onAuthStateChanged(auth, user);
   };
 
+  // signout user
+  const userSignOut = () => {
+    return signOut(auth);
+  };
+
   return (
     <FirebaseContext.Provider
       value={{
         signUpUserWithEmailAndPassword,
         getSignedInUser,
         signInUserWithEmailAndPassword,
+        userSignOut,
       }}
     >
       {props.children}
