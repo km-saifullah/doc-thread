@@ -54,7 +54,9 @@ npm install
 npm run dev
 ```
 
-## Live Demo
+## Live Website
+
+[Live Site](https://doc-thread.netlify.app/)
 
 ## Figma Link
 
