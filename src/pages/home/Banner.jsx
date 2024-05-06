@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../utils/Button";
 import Image from "../../utils/Image";
 import bannerImg from "../../assets/images/banner_img.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -17,7 +18,9 @@ const Banner = () => {
               medical attention today
             </p>
             <div className="flex items-center justify-center lg:justify-normal pb-10 lg:pb-0">
-              <Button text="Register" />
+              <Link to="/register">
+                <Button text="Register" />
+              </Link>
             </div>
           </div>
           <div className="h-[525px] w-[496px]">
