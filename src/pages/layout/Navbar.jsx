@@ -21,6 +21,7 @@ const Navbar = () => {
     if (data) {
       setIsSignedIn(true);
     } else {
+      setIsSignedIn(false);
     }
   });
   return (
@@ -64,7 +65,7 @@ const Navbar = () => {
                   About
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   className={({ isActive }) =>
                     `${
@@ -77,20 +78,22 @@ const Navbar = () => {
                 >
                   Service
                 </NavLink>
-              </li>
+              </li> */}
               <li>
-                <NavLink
-                  className={({ isActive }) =>
-                    `${
-                      isActive
-                        ? "text-navLink"
-                        : "text-primary text-base font-medium font-roboto leading-[140%]"
-                    }  `
-                  }
-                  to="/appointment"
-                >
-                  Appointment
-                </NavLink>
+                {isSignedIn ? (
+                  <NavLink
+                    className={({ isActive }) =>
+                      `${
+                        isActive
+                          ? "text-navLink"
+                          : "text-primary text-base font-medium font-roboto leading-[140%]"
+                      }  `
+                    }
+                    to="/appointment"
+                  >
+                    Appointment
+                  </NavLink>
+                ) : null}
               </li>
               <li>
                 {isSignedIn == false ? (
