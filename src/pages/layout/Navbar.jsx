@@ -93,7 +93,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                {!isSignedIn ? (
+                {isSignedIn == false ? (
                   <NavLink
                     className={({ isActive }) =>
                       `${
