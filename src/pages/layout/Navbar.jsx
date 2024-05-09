@@ -108,10 +108,14 @@ const Navbar = () => {
                   </NavLink>
                 ) : (
                   <ul className="flex items-center justify-center gap-x-3">
-                    <li>{data.email}</li>
-                    <li className="bg-btnBg px-3 py-2 rounded">
-                      <Link onClick={handleLogout}>Logout</Link>
-                    </li>
+                    {data && (
+                      <>
+                        <li>{data.email}</li>
+                        <li className="bg-btnBg px-3 py-2 rounded">
+                          <Link onClick={handleLogout}>Logout</Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 )}
               </li>
