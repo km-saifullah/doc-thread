@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth, db } from "../config/firebase.config";
+import { ref, set } from "firebase/database";
 
 const FirebaseContext = createContext(null);
 
@@ -32,6 +33,22 @@ export const FirebaseProvider = (props) => {
     return signOut(auth);
   };
 
+  // update profile
+  // const updateProfileinfo = (dpName) => {
+  //   return updateProfile(auth.currentUser, {
+  //     displayName: dpName,
+  //   });
+  // };
+
+  // send user data to the real time database
+  const sendUserDataToDb = (userId, name, email, phone) => {
+    return set(ref(db, "users/" + userId), {
+      fullName: name,
+      email: email,
+      phoneNumber: phone,
+    });
+  };
+
   return (
     <FirebaseContext.Provider
       value={{
@@ -39,6 +56,7 @@ export const FirebaseProvider = (props) => {
         getSignedInUser,
         signInUserWithEmailAndPassword,
         userSignOut,
+        sendUserDataToDb,
       }}
     >
       {props.children}

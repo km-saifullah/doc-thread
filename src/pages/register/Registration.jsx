@@ -7,6 +7,8 @@ import {
   nameValidation,
   passwordValidation,
 } from "../../validation/validation";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../config/firebase.config";
 
 const Registration = () => {
   let firebase = useFirebase();
@@ -48,7 +50,17 @@ const Registration = () => {
           registerData.password
         )
         .then((userData) => {
-          console.log(userData);
+          console.log(userData.user.uid)
+          updateProfile(auth.currentUser, {
+            displayName: registerData.fullname,
+          }).then(() => {
+            firebase.sendUserDataToDb(
+              userData.user.uid,
+              registerData.fullname,
+              registerData.email,
+              registerData.phone
+            );
+          });
           navigate("/login");
         })
         .catch((error) => {

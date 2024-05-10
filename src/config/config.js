@@ -5,6 +5,7 @@ const config = {
   storageBucket: String(import.meta.env.VITE_FIREBASE_STORAGE_ID),
   messagingSenderId: String(import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID),
   appId: String(import.meta.env.VITE_FIREBASE_APP_ID),
+  databaseURL: String(import.meta.env.VITE_FIREBASE_DATABASE_URL),
 };
 
 export default config;
