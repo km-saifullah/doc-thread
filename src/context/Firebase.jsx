@@ -33,13 +33,6 @@ export const FirebaseProvider = (props) => {
     return signOut(auth);
   };
 
-  // update profile
-  // const updateProfileinfo = (dpName) => {
-  //   return updateProfile(auth.currentUser, {
-  //     displayName: dpName,
-  //   });
-  // };
-
   // send user data to the real time database
   const sendUserDataToDb = (userId, name, email, phone) => {
     return set(ref(db, "users/" + userId), {
